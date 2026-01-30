@@ -9,7 +9,7 @@ from WorkFlow.config import DATA_DIR, QDRANT_URL, QDRANT_API_KEY, COLLECTION_NAM
 
 
 def read_points() -> Iterable[models.PointStruct]:
-    payload_path = os.path.join(DATA_DIR, 'startups_demo.json')
+    payload_path = os.path.join(DATA_DIR, 'data.json')
     with open(payload_path) as fd:
         for idx, line in enumerate(fd):
             obj = json.loads(line)
@@ -97,3 +97,4 @@ def upload_embeddings():
 
 if __name__ == '__main__':
     upload_embeddings()
+
